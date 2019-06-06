@@ -12934,23 +12934,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jayraj.thakur\\.nuget\\packages\\": {},
+    "C:\\Users\\mahek.master\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jayraj.thakur\\source\\repos\\summer19\\summer19\\summer19.csproj",
+      "projectUniqueName": "C:\\Users\\mahek.master\\Desktop\\Project 2019 (17dit021)\\summerinternship\\summer19\\summer19.csproj",
       "projectName": "summer19",
-      "projectPath": "C:\\Users\\jayraj.thakur\\source\\repos\\summer19\\summer19\\summer19.csproj",
-      "packagesPath": "C:\\Users\\jayraj.thakur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jayraj.thakur\\source\\repos\\summer19\\summer19\\obj\\",
+      "projectPath": "C:\\Users\\mahek.master\\Desktop\\Project 2019 (17dit021)\\summerinternship\\summer19\\summer19.csproj",
+      "packagesPath": "C:\\Users\\mahek.master\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mahek.master\\Desktop\\Project 2019 (17dit021)\\summerinternship\\summer19\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jayraj.thakur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mahek.master\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
