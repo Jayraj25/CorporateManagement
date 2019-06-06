@@ -106,3 +106,4 @@ C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.csproj.CopyComplete
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Home\login.g.cshtml.cs
 >>>>>>> 188abd0d52973a84e4c9225a387f947b9436eb88
+C:\Users\mahek.master\Desktop\Project 2019 (17dit021)\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Home\login.g.cshtml.cs
