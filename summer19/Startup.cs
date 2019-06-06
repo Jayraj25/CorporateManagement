@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using summer19.Models;
+using summer19.Model;
 
 namespace summer19
 {
@@ -34,7 +34,12 @@ namespace summer19
 
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<CorporateContext>(options =>
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(15);//You can set Time
+            });
+
+            services.AddDbContext<corporate1Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Corporateconnection")));
         }
 
@@ -52,12 +57,14 @@ namespace summer19
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseHttpsRedirection();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Requirements}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=login}/{id?}");
             });
         }
     }

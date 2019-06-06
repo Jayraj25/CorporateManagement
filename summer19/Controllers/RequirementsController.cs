@@ -2,26 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using summer19.Models;
+using summer19.Model;
 
 namespace summer19.Controllers
 {
     public class RequirementsController : Controller
     {
-        private readonly CorporateContext _context;
-
-        public RequirementsController(CorporateContext context)
+        private readonly corporate1Context _context;
+        public corporate1Context db = new corporate1Context();
+        public RequirementsController(corporate1Context context)
         {
             _context = context;
         }
 
         // GET: Requirements
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Requirements.ToListAsync());
+            string session = HttpContext.Session.GetString("name");
+
+            if(session == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            else
+            {
+                var data = db.Requirements.FromSql("select * from Requirements");
+                return View(data);
+            }
+            //return View(await _context.Requirements.ToListAsync());
         }
 
         // GET: Requirements/Details/5
@@ -33,7 +45,7 @@ namespace summer19.Controllers
             }
 
             var requirement = await _context.Requirements
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (requirement == null)
             {
                 return NotFound();
@@ -45,7 +57,7 @@ namespace summer19.Controllers
         // GET: Requirements/Create
         public IActionResult AddOrEdit(int id=0)
         {
-            return View(new Requirement());
+            return View(new Requirements());
         }
 
         // POST: Requirements/Create
@@ -53,7 +65,7 @@ namespace summer19.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirement requirement)
+        public async Task<IActionResult> AddOrEdit([Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirements requirement)
         {
             if (ModelState.IsValid)
             {
@@ -85,9 +97,9 @@ namespace summer19.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirement requirement)
+        public async Task<IActionResult> Edit(int id, [Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirements requirement)
         {
-            if (id != requirement.id)
+            if (id != requirement.Id)
             {
                 return NotFound();
             }
@@ -101,7 +113,7 @@ namespace summer19.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RequirementExists(requirement.id))
+                    if (!RequirementExists(requirement.Id))
                     {
                         return NotFound();
                     }
@@ -124,7 +136,7 @@ namespace summer19.Controllers
             }
 
             var requirement = await _context.Requirements
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (requirement == null)
             {
                 return NotFound();
@@ -146,7 +158,7 @@ namespace summer19.Controllers
 
         private bool RequirementExists(int id)
         {
-            return _context.Requirements.Any(e => e.id == id);
+            return _context.Requirements.Any(e => e.Id == id);
         }
     }
 }
