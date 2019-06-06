@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 C:\Users\jayraj.thakur\source\repos\summer19\summer19\bin\Debug\netcoreapp2.2\summer19.deps.json
 C:\Users\jayraj.thakur\source\repos\summer19\summer19\bin\Debug\netcoreapp2.2\summer19.runtimeconfig.json
 C:\Users\jayraj.thakur\source\repos\summer19\summer19\bin\Debug\netcoreapp2.2\summer19.runtimeconfig.dev.json
@@ -70,6 +72,7 @@ C:\Users\mahek.master\Desktop\Project 2019 (17dit021)\summerinternship\summer19\
 C:\Users\mahek.master\Desktop\Project 2019 (17dit021)\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.pdb
 C:\Users\mahek.master\Desktop\Project 2019 (17dit021)\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.csproj.CopyComplete
 =======
+>>>>>>> b7603eb711d6b1e9355b6286d4003f800f601c0f
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\bin\Debug\netcoreapp2.2\summer19.deps.json
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\bin\Debug\netcoreapp2.2\summer19.runtimeconfig.json
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\bin\Debug\netcoreapp2.2\summer19.runtimeconfig.dev.json
@@ -86,6 +89,7 @@ C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.TagHelpers.input.cache
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.TagHelpers.output.cache
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.RazorCoreGenerate.cache
+C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Home\login.g.cshtml.cs
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\AddOrEdit.g.cshtml.cs
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Requirements\Delete.g.cshtml.cs
@@ -104,6 +108,12 @@ C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.dll
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.pdb
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\summer19.csproj.CopyComplete
+<<<<<<< HEAD
+=======
 C:\Users\jayraj.thakur\source\repos\summer19\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Home\login.g.cshtml.cs
 >>>>>>> 188abd0d52973a84e4c9225a387f947b9436eb88
+<<<<<<< HEAD
 C:\Users\mahek.master\Desktop\Project 2019 (17dit021)\summerinternship\summer19\obj\Debug\netcoreapp2.2\Razor\Views\Home\login.g.cshtml.cs
+=======
+>>>>>>> b7603eb711d6b1e9355b6286d4003f800f601c0f
+>>>>>>> cb4dc3ca9d465ea61743496649b8f16a4cd6d007
