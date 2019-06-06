@@ -2,15 +2,6 @@
 <html>
 
 <head>
-<<<<<<< HEAD
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - summer19</title>-->
 
     <link href="~/js/lib/bootstrap/dist/css/bootstrap4.1.3.min.css" rel="stylesheet" />
     <script src="~/js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -21,7 +12,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</head>
+<body>
 
     <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
@@ -57,211 +51,67 @@
             <span class="navbar-toggler-icon"></span>
         </button>-->
     </nav>
-    <div class="sidebar left ">
-        <ul class="list-sidebar bg-defoult">
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
-                <ul class="sub-menu collapse" id="dashboard">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                    <li><a href="#">Typography</a></li>
-                    <li><a href="#">FontAwesome</a></li>
-                    <li><a href="#">Slider</a></li>
-                    <li><a href="#">Panels</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Bootstrap Model</a></li>
-                </ul>
-            </li>
-            <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
-            <li>
-                <a href="#" id="btn-1" data-toggle="collapse" data-target="#products" class="collapsed active"> <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                    <li><a href="#">Typography</a></li>
-                    <li><a href="#">FontAwesome</a></li>
-                    <li><a href="#">Slider</a></li>
-                    <li><a href="#">Panels</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Bootstrap Model</a></li>
-                </ul>
-            </li>
-            <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
-                <ul class="sub-menu collapse" id="tables">
-                    <li><a href=""> Static Tables</a></li>
-                    <li><a href=""> Data Tables</a></li>
-                    <li><a href=""> Foo Tables</a></li>
-                    <li><a href=""> jqGrid</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
-                <ul class="sub-menu collapse" id="e-commerce">
-                    <li><a href=""> Products grid</a></li>
-                    <li><a href=""> Products list</a></li>
-                    <li><a href="">Product edit</a></li>
-                    <li><a href=""> Product detail</a></li>
-                    <li><a href="">Cart</a></li>
-                    <li><a href=""> Orders</a></li>
-                    <li><a href=""> Credit Card form</a> </li>
-                </ul>
-            </li>
-            <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
 
-=======
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <div class="container-fluid" style="height:100%">
+        <div class="row content">
+            <div class="col-md-3" >
+                <div class="sidebar left ">
+                    <ul class="list-sidebar bg-defoult">
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                            <ul class="sub-menu collapse" id="dashboard">
+                                <li class="active"><a href="#">CSS3 Animation</a></li>
+                                <li><a href="#">General</a></li>
+                                <li><a href="#">Buttons</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
+                        <li>
+                            <a href="#" id="btn-1" data-toggle="collapse" data-target="#products" class="collapsed active"> <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                            <ul class="sub-menu collapse" id="products">
+                                <li class="active"><a href="#">CSS3 Animation</a></li>
+                                <li><a href="#">General</a></li>
+                                <li><a href="#">Buttons</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
+                            <ul class="sub-menu collapse" id="tables">
+                                <li><a href=""> Static Tables</a></li>
+                                <li><a href=""> Data Tables</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
+                            <ul class="sub-menu collapse" id="e-commerce">
+                                <li><a href=""> Products grid</a></li>
+                                <li><a href=""> Products list</a></li>
+                            </ul>
+                        </li>
+                        <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
+                    </ul>
+                </div>
+            </div>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - summer19</title>
-    
-    <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-         <div class="container">
-             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-
-                action="Index">summer19</a>
-             <button class="navbar-toggler" type="button" data-toggle="collapse" data-
-                     target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                     aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                 <ul class="navbar-nav flex-grow-1">
-                     <li class="nav-item">
-                         <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                            asp-action="Index">Home</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                            asp-action="Privacy">Privacy</a>
-                     </li>
-                 </ul>
-             </div>
-         </div>
-     </nav>-->
-    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #3498db;position:sticky; top: 0; z-index: 2; height: 60px;">
-        <button> <i class="fa fa fa-th-large">Services </i></button>
-        <h4 style="color: #fff; margin-left:10px;">Collabera</h4>
-        <ul class="navbar-nav ml-auto">
-            <li><h6><a href="@Url.Action("Logout","Home")"><i class="fas fa-sign-out-alt" style="font-size:30px;color:white;" data-toggle="tooltip" title="Logout"></i></a></h6></li>
-            <li><p></p></li>
-        </ul>
-        <!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>-->
-    </nav>
-    <div class="sidebar left ">
-        <ul class="list-sidebar bg-defoult">
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
-                <ul class="sub-menu collapse" id="dashboard">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                    <li><a href="#">Typography</a></li>
-                    <li><a href="#">FontAwesome</a></li>
-                    <li><a href="#">Slider</a></li>
-                    <li><a href="#">Panels</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Bootstrap Model</a></li>
-                </ul>
-            </li>
-            <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active"> <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                    <li><a href="#">Typography</a></li>
-                    <li><a href="#">FontAwesome</a></li>
-                    <li><a href="#">Slider</a></li>
-                    <li><a href="#">Panels</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Bootstrap Model</a></li>
-                </ul>
-            </li>
-            <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
-                <ul class="sub-menu collapse" id="tables">
-                    <li><a href=""> Static Tables</a></li>
-                    <li><a href=""> Data Tables</a></li>
-                    <li><a href=""> Foo Tables</a></li>
-                    <li><a href=""> jqGrid</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
-                <ul class="sub-menu collapse" id="e-commerce">
-                    <li><a href=""> Products grid</a></li>
-                    <li><a href=""> Products list</a></li>
-                    <li><a href="">Product edit</a></li>
-                    <li><a href=""> Product detail</a></li>
-                    <li><a href="">Cart</a></li>
-                    <li><a href=""> Orders</a></li>
-                    <li><a href=""> Credit Card form</a> </li>
-                </ul>
-            </li>
-            <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
-
->>>>>>> b7603eb711d6b1e9355b6286d4003f800f601c0f
-        </ul>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
     </div>
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-
-              fallback-test-value="absolute"
-              crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
-    </environment>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> b7603eb711d6b1e9355b6286d4003f800f601c0f
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2019 - summer19 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
     <script>
         $(document).ready(function () {
             $('button').click(function () {
                 $('.sidebar').toggleClass('fliph');
             });
-
-
-
         });
     </script>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>
