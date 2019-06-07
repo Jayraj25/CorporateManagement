@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     width: 220px;
     background-color: #000;
     transition: all 0.5s ease-in-out;
-    z-index: 1;
+    z-index: auto;
     overflow-x: hidden;
     height: 100%;
 }
@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 .sidebar li a, .sidebar li a.collapsed.active {
     display: block;
-    padding: 8px 12px;
+    /*padding: 8px 12px;*/
     color: #fff;
     border-left: 0px solid #dedede;
     text-decoration: none
@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
         content: "";
         position: absolute;
         left: -5px;
-        top: 0;
+        top: 0px;
         width: 5px;
         background-color: #111;
         height: 100%;
