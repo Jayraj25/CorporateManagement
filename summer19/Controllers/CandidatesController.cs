@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +16,23 @@ namespace summer19.Controllers
     {
         private readonly corporate1Context _context;
         public corporate1Context db = new corporate1Context();
-
+       
         public CandidatesController(corporate1Context context)
         {
             _context = context;
         }
 
         // GET: Candidates
-        public async Task<IActionResult> Index()
+        public  ActionResult Index()
         {
-            return View(await _context.Candidate.ToListAsync());
+            string session = HttpContext.Session.GetString("name");
+
+            if (session == null)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+            var data = db.Candidate.FromSql("select * from Candidate");
+            return View(data);
         }
 
         // GET: Candidates/Details/5
@@ -40,28 +50,6 @@ namespace summer19.Controllers
                 return NotFound();
             }
 
-            return View(candidate);
-        }
-
-        // GET: Candidates/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Candidates/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Firstname,Middlename,Lastname,Jobtitle,Email,Cell,Home,Fax,Address1,Address2,City,Zip,Departement,Country,Hire,Comptetenices,Jobcategory,Source,Resumeupload,Resumes,Status,Feedback")] Candidate candidate)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(candidate);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             return View(candidate);
         }
 

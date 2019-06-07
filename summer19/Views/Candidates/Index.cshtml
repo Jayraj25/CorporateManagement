@@ -4,22 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h3 style="margin-top:10px;margin-bottom:10px;">
+    Candidate Search
+    <a asp-action="Create"><button class="btn btn-primary" style="float:right;"><i class="fa fa-plus" style="margin:5px;" aria-hidden="true"></i>Add</button></a>
+</h3>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Firstname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Middlename)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lastname)
+                Name
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Jobtitle)
@@ -28,69 +21,29 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cell)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Home)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fax)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Zip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Departement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
+                Department
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Hire)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comptetenices)
-            </th>
+            <th>Status</th>
             <th>
                 @Html.DisplayNameFor(model => model.Jobcategory)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Source)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Resumeupload)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Resumes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Feedback)
-            </th>
+            <th> Resumes</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Firstname)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Middlename)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Lastname)
             </td>
             <td>
@@ -100,31 +53,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cell)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Home)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zip)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Departement)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Hire)
@@ -148,14 +77,11 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Feedback)
-            </td>
-            <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
