@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -16,22 +15,99 @@ namespace summer19.Model
         {
         }
 
+        public virtual DbSet<Candidate> Candidate { get; set; }
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Requirements> Requirements { get; set; }
-        public Task Requirement { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=INBD01SR135;Database=corporate1;user id=dev_internship;password=ibinternship_dev;MultipleActiveResultSets=True");
+                optionsBuilder.UseSqlServer("Server=INBD01SR135;Database=corporate1;user id=dev_internship;password=ibinternship_dev;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+
+            modelBuilder.Entity<Candidate>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Address1)
+                    .HasColumnName("address1")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Address2)
+                    .HasColumnName("address2")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Cell)
+                    .HasColumnName("cell")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.City)
+                    .HasColumnName("city")
+                    .HasMaxLength(30);
+
+                entity.Property(e => e.Comptetenices)
+                    .HasColumnName("comptetenices")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Country).HasMaxLength(30);
+
+                entity.Property(e => e.Departement).HasMaxLength(30);
+
+                entity.Property(e => e.Email)
+                    .HasColumnName("email")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Fax)
+                    .HasColumnName("fax")
+                    .HasMaxLength(30);
+
+                entity.Property(e => e.Feedback).HasMaxLength(100);
+
+                entity.Property(e => e.Firstname)
+                    .HasColumnName("firstname")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.Hire)
+                    .HasColumnName("hire")
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.Home)
+                    .HasColumnName("home")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.Jobcategory)
+                    .HasColumnName("jobcategory")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Jobtitle)
+                    .HasColumnName("jobtitle")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.Lastname)
+                    .HasColumnName("lastname")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.Middlename)
+                    .HasColumnName("middlename")
+                    .HasMaxLength(15);
+
+                entity.Property(e => e.Resumeupload).HasMaxLength(100);
+
+                entity.Property(e => e.Source)
+                    .HasColumnName("source")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Status).HasMaxLength(10);
+
+                entity.Property(e => e.Zip).HasColumnName("zip");
+            });
 
             modelBuilder.Entity<Login>(entity =>
             {
