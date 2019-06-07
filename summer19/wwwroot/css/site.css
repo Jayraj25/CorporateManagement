@@ -1,5 +1,12 @@
 ﻿
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+<<<<<<< HEAD
+
+.ex1{
+    display: inline-flex;
+}
+=======
+>>>>>>> d054d083e4c9066a9216dfd9be6897265107339a
 
 html {
     -webkit-text-size-adjust: 100%;
