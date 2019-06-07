@@ -16,6 +16,7 @@ namespace summer19.Model
         }
 
         public virtual DbSet<Candidate> Candidate { get; set; }
+        public virtual DbSet<DataFile> DataFile { get; set; }
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Requirements> Requirements { get; set; }
 
@@ -107,6 +108,15 @@ namespace summer19.Model
                 entity.Property(e => e.Status).HasMaxLength(10);
 
                 entity.Property(e => e.Zip).HasColumnName("zip");
+            });
+
+            modelBuilder.Entity<DataFile>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Extension).HasMaxLength(500);
+
+                entity.Property(e => e.Path).HasColumnName("path");
             });
 
             modelBuilder.Entity<Login>(entity =>
