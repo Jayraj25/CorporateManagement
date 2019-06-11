@@ -68,7 +68,7 @@ namespace summer19.Controllers
             db.DataFile.Add(filesave);
             ViewData["Result"] = db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index","Candidates");
 
             /*if (ModelState.IsValid)
             {

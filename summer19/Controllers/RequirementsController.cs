@@ -155,12 +155,21 @@ namespace summer19.Controllers
             return _context.Requirements.Any(e => e.Id == id);
         }
 
-
+        
         [HttpGet]
-        public ActionResult Transfer(string Departement)
+        public ActionResult Transfer(string dept)
         {
 
-            return RedirectToAction("Index","SubmissionList");
+            //return this.RedirectToAction("Index","SubmissionList");
+            if (dept == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                var data = db.Candidate.FromSql("Select * from candidate where Departement = @p0", dept);
+                return View("~/Views/SubmissionList/Index.cshtml", data);
+            }
         }
     }
 }
