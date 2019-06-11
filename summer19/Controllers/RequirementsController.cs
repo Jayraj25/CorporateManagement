@@ -97,34 +97,28 @@ namespace summer19.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirements requirement)
+        public  ActionResult Edit(int id,Requirements requirement)
         {
-            if (id != requirement.Id)
+            try
             {
-                return NotFound();
-            }
 
-            if (ModelState.IsValid)
-            {
-                try
+                // TODO: Add update logic here
+
+                db.Entry(requirement).State = EntityState.Modified;
+                int i = db.SaveChanges();
+                if (i == 1)
                 {
-                    _context.Update(requirement);
-                    await _context.SaveChangesAsync();
+                    ViewBag.Itemmsg = "Value is Updated";
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RequirementExists(requirement.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+
                 return RedirectToAction(nameof(Index));
+
             }
-            return View(requirement);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Requirements/Delete/5
@@ -159,6 +153,14 @@ namespace summer19.Controllers
         private bool RequirementExists(int id)
         {
             return _context.Requirements.Any(e => e.Id == id);
+        }
+
+
+        [HttpGet]
+        public ActionResult Transfer(string Departement)
+        {
+
+            return RedirectToAction("Index","SubmissionList");
         }
     }
 }
