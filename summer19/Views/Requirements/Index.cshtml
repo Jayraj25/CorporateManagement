@@ -91,7 +91,7 @@
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
-                    <a asp-action="Transfer" asp-route-id="@item.Id" data-toggle="tooltip" title="Assign To Candidate"> <img src="~/icon/138658-200.png" style="width:20px;"></a>
+                    <a asp-action="Index" asp-controller="SubmissionList" asp-route-id="@item.Departement" data-toggle="tooltip" title="Assign To Candidate"> <img src="~/icon/138658-200.png" style="width:20px;"></a>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" data-toggle="tooltip" title="Edit" aria-hidden="true"></i></a> |
