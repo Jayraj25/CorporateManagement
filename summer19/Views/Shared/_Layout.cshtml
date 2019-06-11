@@ -25,41 +25,43 @@
             <li><p></p></li>
         </ul>
     </nav>
+
     <div id="wrapper" class="active">
-        <div id="sidebar-wrapper">
-            <ul id="sidebar_menu" class="sidebar-nav">
-                <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"><i class="fa fa-bars" aria-hidden="true"></i></span></a></li>
-            </ul>
-            <ul class="sidebar-nav" id="sidebar">
-                <li><a><button class="btn"><i class="fa fa-book" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Requirement Search"></i></button></a></li>
-                <li><a><button class="btn"><i class="fa fa-plus" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Add Requirements"></i></button></a></li>
-                <li><a><button class="btn"><i class="fa fa-search" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Candidtate Search"></i></button></a></li>
-                <li><a><button class="btn"><i class="fa fa-users" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Add Candidate"></i></button></a></li>
-                <li><a><button class="btn"><i class="fa fa-envelope" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Email Notifications"></i></button></a></li>
+        <div class="row">
+            <div class="col-sm-1">
+                <div id="sidebar-wrapper">
+                    <ul id="sidebar_menu" class="sidebar-nav">
+                        <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"><i class="fa fa-bars" aria-hidden="true"></i></span></a></li>
+                    </ul>
+                    <ul class="sidebar-nav" id="sidebar">
+                        <li><a><button class="btn"><i class="fa fa-book" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Requirement Search"></i></button></a></li>
+                        <li><a><button class="btn"><i class="fa fa-plus" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Add Requirements"></i></button></a></li>
+                        <li><a><button class="btn"><i class="fa fa-search" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Candidtate Search"></i></button></a></li>
+                        <li><a><button class="btn"><i class="fa fa-users" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Add Candidate"></i></button></a></li>
+                        <li><a><button class="btn"><i class="fa fa-envelope" aria-hidden="true" style="color:black; float:right; margin-right:15px; margin-top:1px; margin-bottom:20px; font-size:40px;" title="Email Notifications"></i></button></a></li>
 
-            </ul>
-        </div>
-       
-        <div class="container-fluid" style="min-height: 85vh; min-width:170vh;">
-            <div class="row content">
+                    </ul>
+                </div>
+            </div>
 
-                <div class="col-md-9">
+            <div class="col-sm-11">
+                <div class="container-fluid" style="min-height: 85vh; min-width:170vh;">
                     @RenderBody()
                 </div>
             </div>
         </div>
     </div>
-        <div class="footer" style="background-color: #3498db; color: white; text-align: center; position: fixed; left: 0; bottom: 0; width: 100%;">
-            <h5>Corporate Management</h5>
-        </div>
+    <div class="footer" style="background-color: #3498db; color: white; text-align: center; position: fixed; left: 0; bottom: 0; width: 100%;">
+        <h5>Corporate Management</h5>
+    </div>
 
 
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("active");
-            });
-        </script>
-        @RenderSection("Scripts", required: false)
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
