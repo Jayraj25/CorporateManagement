@@ -19,14 +19,22 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
+        body {
+            background: linear-gradient(to right, #0062E6, #33AEFF);
+        }
+
         .login-container {
             margin-top: 5%;
             margin-bottom: 5%;
+
         }
 
         .login-form-1 {
             padding: 5%;
             box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+            background:#fff;
+            margin-left:240px;
+            
         }
 
             .login-form-1 h3 {
@@ -64,7 +72,7 @@
     <div class="container login-container">
         <div class="row">
             <div class="col-md-5 login-form-1">
-                <h3>Login</h3>
+                <h3>Collabera</h3>
                 <form method="post" asp-controller="Home">
                     <div class="form-group">
                         <input type="text" class="form-control" asp-for="Username" placeholder="Your Username *" value="" />
