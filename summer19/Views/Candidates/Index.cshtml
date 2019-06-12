@@ -16,8 +16,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <h3 style="margin-top:10px;margin-bottom:10px;">
@@ -31,7 +29,7 @@
     }
 </style>
 
-<table class="table table-striped"  cellspacing="0" width="100%">
+<table class="table table-bordered table-hover"  cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>
@@ -81,7 +79,7 @@
                     @Html.DisplayFor(modelItem => item.Hire)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Comptetenices)
+                    @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Jobcategory)
@@ -90,14 +88,11 @@
                     @Html.DisplayFor(modelItem => item.Source)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Resumeupload)
+                    <a href="~/Files/@item.Resumes" target="_blank" data-toggle="tooltip" title="Resume">
+                        <img src="~/icon/pdf.png" style="width:50px;" />
+                    </a>
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Resumes)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
+                
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" data-toggle="tooltip" title="Edit" aria-hidden="true"></i></a>|
                     <a asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info-circle" data-toggle="tooltip" title="Detail" aria-hidden="true"></i></a>|

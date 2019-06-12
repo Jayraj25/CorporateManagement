@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "File";
+}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Exntenstion</th>
+            <th>
+                Path
+            </th>
+        </tr>
+    </thead>
+    @foreach (var datafile in ViewBag.message)
+    {
+        <tr>
+            <td>@datafile.Extension</td>
+            <td><a href="~/Files/@datafile.Path">PDF</a></td>
+        </tr>
+    }
+
+</table>
+

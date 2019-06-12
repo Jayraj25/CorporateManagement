@@ -1,0 +1,79 @@
+﻿@model IEnumerable<summer19.Model.Candidate>
+
+@{
+    ViewData["Title"] = "Assign";
+}
+
+<h3>Assign</h3>
+
+<table class="table table-bordered table-hover" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobtitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                Department
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hire)
+            </th>
+            <th>Status</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobcategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th> Resumes</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jobtitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jobcategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source)
+                </td>
+                <td>
+                    <a href="~/Files/@item.Resumes" target="_blank" data-toggle="tooltip" title="Resume">
+                        <img src="~/icon/pdf.png" style="width:50px;" />
+                    </a>
+                </td>
+
+                <td>
+                    <form method="post" action="Assign"><input type="submit" class="btn btn-primary" value="Assign" /></form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

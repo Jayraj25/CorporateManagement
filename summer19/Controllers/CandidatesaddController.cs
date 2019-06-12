@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,16 +40,15 @@ namespace summer19.Controllers
         }
 
         // POST: Candidates/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(DataFile filesave, Candidate candidate, IFormFile file)
         {
             try
             {
                 if (file == null || file.Length == 0)
+                {
                     filesave.Path = "No File Exist";
+                }
 
                 else
                 {
@@ -59,12 +59,25 @@ namespace summer19.Controllers
                     filesave.Extension = Path.GetExtension(file.FileName);
                     candidate.Resumes = Path.GetFileName(file.FileName);
                 }
+                db.Candidate.Add(candidate);
+                db.DataFile.Add(filesave);
+                int i = db.SaveChanges();
+                if (i == 1)
+                {
+                    return RedirectToAction("Index", "Candidates");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Candidates");
+                }
             }
             catch (Exception e)
             {
-                ViewBag.message = e;
+                Debug.WriteLine(e);
+                //ViewBag.message = e;
             }
-            db.Candidate.Add(candidate);
+            return View();
+            /*db.Candidate.Add(candidate);
             db.DataFile.Add(filesave);
             ViewData["Result"] = db.SaveChanges();
 

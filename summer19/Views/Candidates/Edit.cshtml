@@ -4,11 +4,153 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
 
-<h4>Candidate</h4>
-<hr />
-<div class="row">
+
+<div class="container">
+    <h3>Edit Candidate</h3>
+    <hr />
+    <form asp-action="Edit" enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card shadow 10px;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname" asp-for="Firstname" class="form-control" placeholder="* FirstName" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Firstname)</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="midname">Middle Name</label>
+                                <input type="text" id="midname" asp-for="Middlename" class="form-control" placeholder="* MiddleName" autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Middlename)</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname" asp-for="Lastname" class="form-control" placeholder="* LastName" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Lastname)</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="jobtitle">Job Title</label>
+                                <input type="text" id="jobtitle" asp-for="Jobtitle" class="form-control" placeholder="* Job Title" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Jobtitle)</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" asp-for="Email" class="form-control" placeholder="* Email" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Email)</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="cell">Cell</label>
+                                <input type="text" id="cell" asp-for="Cell" class="form-control" placeholder="* Cell" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Cell)</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="home">Home</label>
+                                <input type="text" id="home" asp-for="Home" class="form-control" placeholder="* Home" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Home)</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="fax">Fax</label>
+                                <input type="text" id="fax" asp-for="Fax" class="form-control" placeholder="* fax" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Fax)</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="address1">Address Line 1</label>
+                                <input type="text" id="address1" asp-for="Address1" class="form-control" placeholder="* Address" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Address1)</p>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="address2">Address Line 2</label>
+                                <input type="text" id="address2" asp-for="Address2" class="form-control" placeholder="* Adrdress" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Address2)</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="city">City</label>
+                                <input type="text" id="city" asp-for="City" class="form-control" placeholder="* City" required autocomplete="off" />
+
+                            </div>
+                            <div class="col-sm-8">
+                                <label for="Some1">Department</label>
+                                <select class="form-control" id="sel1" style="width:270px;" asp-for="Departement" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option>IT</option>
+                                    <option>NON IT</option>
+                                    <option>Delivery</option>
+                                    <option>Sales</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="zip">Zip</label>
+                                <input type="number" id="zip" asp-for="Zip" class="form-control" placeholder="* Zip" required autocomplete="off" />
+                                <p id="error"> @Html.ValidationMessageFor(m => m.Zip)</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <label for="country">Country</label>
+                                <select class="form-control" id="country" style="width:270px;" asp-for="Country" required>
+                                    <option value="" selected disabled>Country</option>
+                                    <option>India</option>
+                                    <option>USA</option>
+                                    <option>America</option>
+                                    <option>Canda</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="lbl">Eligible for Hire</label>
+                <div class="form-check-inline">
+                    Yes &nbsp;
+                    @Html.RadioButtonFor(model => model.Hire, "Yes")
+                </div>
+                <div class="form-check-inline">
+                    No &nbsp;
+                    @Html.RadioButtonFor(model => model.Hire, "NO")<br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="comptetenices">Comptetenices</label>
+                    <textarea class="form-control " rows="3" id="comptetenices" asp-for="Comptetenices" placeholder="Enter Core Competencies" style="width:455px;height:200px;" required></textarea>
+                    <p id="error"> @Html.ValidationMessageFor(m => m.Comptetenices)</p>
+                </div>
+                <div class="form-group">
+                    <label for="Jobcategory">Job Category</label>
+                    <select class="form-control containwidth" asp-for="Jobcategory" id="jobcategory" style="width:455px;" required>
+                        <option value="" selected disabled>Select Job Category</option>
+                        <option>Open</option>
+                        <option>Close</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comptetenices">Source</label>
+                    <select class="form-control containwidth" asp-for="Source" id="source" style="width:455px;" required>
+                        <option value="" selected disabled>Source</option>
+                        <option>Naukri.com</option>
+                        <option>Monster</option>
+                        <option>shine.com</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="file" name="file" multiple class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="submit" id="submit" class="btn btn-primary" value="submit" style="color:white;float:right" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <a asp-action="Index" style="float:right;margin-bottom:10px;">Back to List</a>
+    </div>
+</div>
+<!--<div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -132,8 +274,9 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>-->
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

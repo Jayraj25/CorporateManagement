@@ -10,7 +10,6 @@ using summer19.Model;
 
 namespace summer19.Controllers
 {
-    //[Route("SubmissionList")]
     public class SubmissionListController : Controller
     {
         private readonly corporate1Context _context;
@@ -22,8 +21,6 @@ namespace summer19.Controllers
         }
 
         // GET: SubmissionList
-        //[HttpGet("SubmissionList/Index/{Departement}")]
-        //[Route("Requirements/Transfer/{Department}")]
         [Route("spec")]
         public  IActionResult Index(string id)
         {
@@ -44,15 +41,19 @@ namespace summer19.Controllers
                     var data = db.Candidate.FromSql("Select * from candidate where Departement = @p0", id);
                     return View("~/Views/SubmissionList/Index.cshtml",data);
                 }
-                   /* var depart = await _context.Candidate
-                .FirstOrDefaultAsync(m => m.Departement == dept);
-                    if (depart == null)
-                    {
-                        return NotFound();
-                    }
-                var data = db.Candidate.FromSql("select * from Candidate");
-                return View(data);*/
             }
+        }
+
+        public ActionResult Assign()
+        {
+            string session = HttpContext.Session.GetString("name");
+
+            if (session == null)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+            var data = db.Candidate.FromSql("select * from Candidate");
+            return View(data);
         }
             
     }
