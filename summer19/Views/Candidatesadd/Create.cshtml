@@ -4,15 +4,17 @@
     ViewData["Title"] = "Create";
 }
 
-<h3>Create Candidate</h3>
-<hr />
+
 
 <div class="container">
     <form asp-action="Create" enctype="multipart/form-data" method="post">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card shadow 10px;">
-                    <div class="card-body">
+        <div class="card shadow 10px;">
+            <div class="card-header">
+                <h3>Create Candidate</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="row">
                             <div class="col-sm-4">
                                 <label for="firstname">First Name</label>
@@ -97,63 +99,59 @@
 
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <label class="lbl">Eligible for Hire</label>
-                <div class="form-check-inline">
-                    Yes &nbsp;
-                    @Html.RadioButtonFor(model => model.Hire, "Yes")
-                </div>
-                <div class="form-check-inline">
-                    No &nbsp;
-                    @Html.RadioButtonFor(model => model.Hire, "NO")<br /><br />
-                </div>
-                <div class="form-group">
-                    <label for="comptetenices">Comptetenices</label>
-                    <textarea class="form-control " rows="3" id="comptetenices" asp-for="Comptetenices" placeholder="Enter Core Competencies" style="width:455px;height:200px;" required></textarea>
-                    <p id="error"> @Html.ValidationMessageFor(m => m.Comptetenices)</p>
-                </div>
-                <div class="form-group">
-                    <label for="Jobcategory">Job Category</label>
-                    <select class="form-control containwidth" asp-for="Jobcategory" id="jobcategory" style="width:455px;" required>
-                        <option value="" selected disabled>Select Job Category</option>
-                        <option>Open</option>
-                        <option>Close</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="comptetenices">Source</label>
-                    <select class="form-control containwidth" asp-for="Source" id="source" style="width:455px;" required>
-                        <option value="" selected disabled>Source</option>
-                        <option>Naukri.com</option>
-                        <option>Monster</option>
-                        <option>shine.com</option>
-                    </select>
-                </div>
-                <!--  <div class="custom-file">
-
-                <label class="custom-file-label" for="customFile">Choose file</label>
-
-                <!-- <input type="file" name="file" multiple class="custom-file-input" id="customFile" asp-for="Fileupload">
-                  </div>-->
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="file" name="file" multiple class="form-control-file" id="exampleFormControlFile1">
+                    <div class="col-sm-6">
+                        <label class="lbl">Eligible for Hire</label>
+                        <div class="form-check-inline">
+                            Yes &nbsp;
+                            @Html.RadioButtonFor(model => model.Hire, "Yes")
                         </div>
-                        <div class="col-sm-6">
-                            <input type="submit" id="submit" class="btn btn-primary" value="submit" style="color:white;float:right" />
+                        <div class="form-check-inline">
+                            No &nbsp;
+                            @Html.RadioButtonFor(model => model.Hire, "NO")<br /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="comptetenices">Comptetenices</label>
+                            <textarea class="form-control " rows="3" id="comptetenices" asp-for="Comptetenices" placeholder="Enter Core Competencies" style="width:455px;height:200px;" required></textarea>
+                            <p id="error"> @Html.ValidationMessageFor(m => m.Comptetenices)</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="Jobcategory">Job Category</label>
+                            <select class="form-control containwidth" asp-for="Jobcategory" id="jobcategory" style="width:455px;" required>
+                                <option value="" selected disabled>Select Job Category</option>
+                                <option>Open</option>
+                                <option>Close</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comptetenices">Source</label>
+                            <select class="form-control containwidth" asp-for="Source" id="source" style="width:455px;" required>
+                                <option value="" selected disabled>Source</option>
+                                <option>Naukri.com</option>
+                                <option>Monster</option>
+                                <option>shine.com</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="file" name="file" multiple class="form-control-file" id="exampleFormControlFile1">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="submit" id="submit" class="btn btn-primary" value="submit" style="color:white;float:right" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="card-footer">
+                <a asp-action="Index" style="float:right;margin-bottom:10px;">Back to List</a>
+            </div>
         </div>
     </form>
+</div>
 
-    <div>
-        <a asp-action="Index" style="float:right;margin-bottom:10px;">Back to List</a>
-    </div>
+    
 </div>
 
 

@@ -67,7 +67,7 @@ namespace summer19
                     name: "default",
                     template: "{controller=Home}/{action=login}/{id?}");
                 routes.MapRoute(
-                    name:"spec",
+                    name:"sublist",
                     template: "{controller=SubmissionList}/{action=Index}/{Departement}");
             });
         }

@@ -21,7 +21,7 @@ namespace summer19.Controllers
         }
 
         // GET: SubmissionList
-        [Route("spec")]
+        [Route("sublist")]
         public  IActionResult Index(string id)
         {
             string session = HttpContext.Session.GetString("name");

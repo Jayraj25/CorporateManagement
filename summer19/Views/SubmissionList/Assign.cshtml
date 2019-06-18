@@ -38,42 +38,52 @@
     <tbody>
         @foreach (var item in Model)
         {
+        <form method="post" action="Assign">
             <tr>
-                <td>
+                <td id="td_1">
                     @Html.DisplayFor(modelItem => item.Firstname)
                     @Html.DisplayFor(modelItem => item.Lastname)
                 </td>
-                <td>
+                <td id="td_2">
                     @Html.DisplayFor(modelItem => item.Jobtitle)
                 </td>
-                <td>
+                <td id="td_3">
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-                <td>
+                <td id="td_4">
                     @Html.DisplayFor(modelItem => item.Departement)
                 </td>
-                <td>
+                <td id="td_5">
                     @Html.DisplayFor(modelItem => item.Hire)
                 </td>
-                <td>
+                <td id="td_6">
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
-                <td>
+                <td id="td_7">
                     @Html.DisplayFor(modelItem => item.Jobcategory)
                 </td>
-                <td>
+                <td id="td_8">
                     @Html.DisplayFor(modelItem => item.Source)
                 </td>
-                <td>
+                <td id="td_9">
                     <a href="~/Files/@item.Resumes" target="_blank" data-toggle="tooltip" title="Resume">
                         <img src="~/icon/pdf.png" style="width:50px;" />
                     </a>
                 </td>
 
                 <td>
-                    <form method="post" action="Assign"><input type="submit" class="btn btn-primary" value="Assign" /></form>
-                </td>
+                    <input type="submit" class="btn btn-primary" id="assgn" value="Assign" />
+                </td> 
             </tr>
+        </form>
         }
     </tbody>
 </table>
+
+@*<script type="text/javascript">
+    $(function () {
+        $("#assgn").bind("click", function () {
+            window.open('SubmissionList/Index.cshtml');
+        });
+    });
+</script>*@
