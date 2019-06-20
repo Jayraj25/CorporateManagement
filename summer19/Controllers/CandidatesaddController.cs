@@ -77,19 +77,6 @@ namespace summer19.Controllers
                 //ViewBag.message = e;
             }
             return View();
-            /*db.Candidate.Add(candidate);
-            db.DataFile.Add(filesave);
-            ViewData["Result"] = db.SaveChanges();
-
-            return RedirectToAction("Index","Candidates");
-
-            /*if (ModelState.IsValid)
-            {
-                _context.Add(candidate);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(candidate);*/
         }
     }
 }

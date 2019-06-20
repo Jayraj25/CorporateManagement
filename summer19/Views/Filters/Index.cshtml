@@ -1,0 +1,54 @@
+﻿@model summer19.Model.Filter
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <h4>Assign Requirement</h4>
+    <div class="card w-100 p-6">
+        @using (Html.BeginForm())
+        {
+            <form method="post" action="Index">
+                <div class="row" style="padding: 15px;">
+                    <div class="col-sm-4 md-4">
+                        <select asp-for="Req" class="form-control" style="width:270px;" id="selectreq" name="selectreq">
+                            <!--<select class="form-control" id="sel1" style="width:270px;" asp-for="Departement" required>-->
+                            <option value="" selected disabled>Requirement Type</option>
+                            <option value="IT">IT</option>
+                            <option value="NON IT">NON IT</option>
+                            <option value="Delivery">Delivery</option>
+                            <option value="Sales">Sales</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-4 md-4">
+                        <select asp-for="Pos" class="form-control" style="width:270px;" id="selectpos" name="selectpos">
+                            <!--<select class="form-control" id="sel1" style="width:270px;" asp-for="Departement" required>-->
+                            <option value="" selected disabled>Select Position</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Recruiter">Recruiter</option>
+                            <option value="Sales">Sales</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 md-4">
+                        <select asp-for="Loc" class="form-control" style="width:270px;" id="selectloc" name="selectloc">
+                            <!--<select class="form-control" id="sel1" style="width:270px;" asp-for="Departement" required>-->
+                            <option value="" selected disabled>Select Location</option>
+                            <option value="Open">Open</option>
+                            <option value="Close">Close</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom:15px;padding-left:15px;padding-right:15px;">
+                    <div class="col-sm-2 md-2">
+                        <input type="submit" class="btn btn-primary form-control" value="Search" style="float:right;" />
+                    </div>
+                </div>
+            </form>
+        }
+    </div>
+    <br />
+</div>

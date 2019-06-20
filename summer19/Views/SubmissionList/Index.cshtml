@@ -96,8 +96,69 @@
         }
 </style>
 
+<script>
+    var localStorageKey = "app_state";
 
-<table class="table table-bordered table-hover">
+    // to preserve state, you first need to keep track of it
+    var default_state = {
+        slide: false,
+    }
+
+    var saved_state = localStorage.getItem(localStorageKey);
+
+    // ternary operator which means if `saved_state` evaluates to `true` we parse it and use that value for `state`; otherwise use `default_state`
+    var state = saved_state ? JSON.parse(saved_state) : default_state;
+
+    $(function () {
+        init();
+
+        $('.button').on('click', function () {
+            var circle = $(this).attr('data-circle');
+            toggleCircle(circle, !state[circle]);
+            //$(this).find('i').toggleClass('fa-minus fa-plus');
+        });
+    });
+
+
+    function init() {
+        for (var key in state) {
+            var is_displayed = state[key];
+            console.log(is_displayed);
+            toggleCircle(key, is_displayed);
+        }
+    }
+
+    function toggleCircle(circle, is_displayed) {
+        if (is_displayed) {
+            $('.' + circle).show()
+            state[circle] = true;
+        } else {
+            $('.' + circle).hide()
+            state[circle] = false;
+        }
+
+        localStorage.setItem(localStorageKey, JSON.stringify(state));
+    }
+</script>
+
+<table>
+    <tr>
+        <td>
+            <button class="btn btn-primary" id="btnExport" onclick="fnExcelReport()" style="border-radius:10px;min-width:170px;">Excel</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" id="tab" onclick="createPDF()" style="border-radius:10px;min-width:170px;">PDF</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" id="mycopy" onclick="copyToClipboard()" style="border-radius:10px;min-width:170px;">Copy</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" id="tab1" onclick="printData()" style="border-radius:10px;min-width:170px;">Print</button>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="table table-bordered table-hover" id="table_1">
     <thead>
         <tr>
             <th>
@@ -156,11 +217,12 @@
                     @Html.DisplayFor(modelItem => item.Source)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Resumes)
-                </td>
+                    <a href="~/Files/@item.Resumes" target="_blank" data-toggle="tooltip" title="Resume">
+                        <img src="~/icon/pdf.png" style="width:50px;" /></a>
+</td>
                 <td>
                     <label class="switch ">
-                        <input type="checkbox" class="primary">
+                        <input type="checkbox" class="primary" checked>
                         <span class="slider round"></span>
                     </label>
                 </td>

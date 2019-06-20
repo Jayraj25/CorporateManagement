@@ -55,7 +55,7 @@ namespace summer19.Controllers
         }
 
         // GET: Requirements/Create
-        public IActionResult AddOrEdit(int id=0)
+        public IActionResult Create(int id=0)
         {
             return View(new Requirements());
         }
@@ -65,7 +65,7 @@ namespace summer19.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirements requirement)
+        public async Task<IActionResult> Create([Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirements requirement)
         {
             if (ModelState.IsValid)
             {

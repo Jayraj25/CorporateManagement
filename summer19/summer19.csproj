@@ -5,6 +5,23 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\AssignsearchCandidate\**" />
+    <Content Remove="Views\AssignsearchCandidate\**" />
+    <EmbeddedResource Remove="Views\AssignsearchCandidate\**" />
+    <None Remove="Views\AssignsearchCandidate\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\AssignsearchCandidate.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Filters\Delete.cshtml" />
+    <Content Remove="Views\Filters\Details.cshtml" />
+    <Content Remove="Views\Filters\Edit.cshtml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -23,7 +40,7 @@
 
 
   <ItemGroup>
-    <Folder Include="wwwroot\Files\" />
+    <Folder Include="wwwroot\css\Files\" />
   </ItemGroup>
 
 </Project>

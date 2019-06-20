@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using summer19.Model;
 
 namespace summer19.Model
 {
@@ -166,5 +167,7 @@ namespace summer19.Model
                     .HasMaxLength(60);
             });
         }
+
+        public DbSet<summer19.Model.Filter> Filter { get; set; }
     }
 }
