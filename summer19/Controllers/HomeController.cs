@@ -70,9 +70,9 @@ namespace summer19.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var senderEmail = new MailAddress("jayrajthakor25@gmail.com", "Jayraj");
+                    var senderEmail = new MailAddress("", "");
                     var receiverEmail = new MailAddress(receiver, "Receiver");
-                    var password = "Jayraj@3775";
+                    var password = "";
                     var sub = subject;
                     var body = message;
                     var smtp = new SmtpClient

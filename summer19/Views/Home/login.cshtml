@@ -1,89 +1,154 @@
-﻿@model Login
+﻿@*@model Login
+    @{
+        Layout = null;
+    }
+
+
+    <html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <style>
+            body {
+                background: linear-gradient(to right, #0062E6, #33AEFF);
+            }
+
+            .login-container {
+                margin-top: 5%;
+                margin-bottom: 5%;
+
+            }
+
+            .login-form-1 {
+                padding: 5%;
+                box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+                background:#fff;
+                margin-left:240px;
+
+            }
+
+                .login-form-1 h3 {
+                    text-align: center;
+                    color: #333;
+                }
+
+            .login-container form {
+                padding: 10%;
+            }
+
+            .btnSubmit {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                border: none;
+                cursor: pointer;
+            }
+
+            .login-form-1 .btnSubmit {
+                font-weight: 600;
+                color: #fff;
+                background-color: #0062cc;
+            }
+
+            .login-form-1 .ForgetPwd {
+                color: #0062cc;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-md-5 login-form-1">
+                    <h3>Collabera</h3>
+                    <form method="post" asp-controller="Home" asp-action="Login">
+                        <div class="form-group">
+                            <input type="text" class="form-control" asp-for="Username" placeholder="Your Username *" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" asp-for="Password" placeholder="Your Password *" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>*@
+
+@model Login
 @{
     Layout = null;
 }
-
+<!DOCTYPE html>
 
 <html>
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap4.1.3.min.css" rel="stylesheet" />
 
-    <style>
-        body {
-            background: linear-gradient(to right, #0062E6, #33AEFF);
-        }
-
-        .login-container {
-            margin-top: 5%;
-            margin-bottom: 5%;
-
-        }
-
-        .login-form-1 {
-            padding: 5%;
-            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-            background:#fff;
-            margin-left:240px;
-            
-        }
-
-            .login-form-1 h3 {
-                text-align: center;
-                color: #333;
-            }
-
-        .login-container form {
-            padding: 10%;
-        }
-
-        .btnSubmit {
-            width: 50%;
-            border-radius: 1rem;
-            padding: 1.5%;
-            border: none;
-            cursor: pointer;
-        }
-
-        .login-form-1 .btnSubmit {
-            font-weight: 600;
-            color: #fff;
-            background-color: #0062cc;
-        }
-
-        .login-form-1 .ForgetPwd {
-            color: #0062cc;
-            font-weight: 600;
-            text-decoration: none;
-        }
-    </style>
+    <script src="~/lib/jquery/dist/js/Jquery3.3.1.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <link href="~/js/lib/bootstrap/dist/css/bootstrap4.1.3.min.css" rel="stylesheet" />
+    <link href="~/css/Login.css" rel="stylesheet" />
+    <link rel="icon" href="~/lib/Images/320px-Collabera_logo.png" sizes="16x16 " type="image/png" />
+    <script src="~/JQuery/JavaScript.js"></script>
+    <script type="text/javascript">
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+    {
+        <text>
+            $(document).ready(function() {
+            alert('@ViewData.ModelState["Error"].Errors.First().ErrorMessage');
+            });
+        </text>
+    }
+    </script>
 </head>
-
 <body>
-    <div class="container login-container">
+    <div class="container">
         <div class="row">
-            <div class="col-md-5 login-form-1">
-                <h3>Collabera</h3>
-                <form method="post" asp-controller="Home">
-                    <div class="form-group">
-                        <input type="text" class="form-control" asp-for="Username" placeholder="Your Username *" value="" />
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-center" style="color:#0173cc">Collabera</h6>
+                        <form class="form-signin" method="post" asp-controller="Home">
+                            <div class="form-label-group">
+                                <!--<input type="text" id="uname" asp-for="Username" class="form-control" placeholder="User Name" required>-->
+                                <input type="text" asp-for="Username" class="form-control" placeholder="User Name" autofocus />
+                                <label for="inputEmail">User Name</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" asp-for="Password" class="form-control" placeholder="Password" required>
+
+                                <label for="inputPassword">Password</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+
+                        </form>
+
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" asp-for="Password" placeholder="Your Password *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Login" />
-                    </div>
-                    <div class="form-group">
-                        <a href="#" class="ForgetPwd">Forget Password?</a>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
 
 
 
