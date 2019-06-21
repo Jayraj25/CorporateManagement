@@ -74,7 +74,6 @@ namespace summer19.Controllers
             catch (Exception e)
             {
                 Debug.WriteLine(e);
-                //ViewBag.message = e;
             }
             return View();
         }

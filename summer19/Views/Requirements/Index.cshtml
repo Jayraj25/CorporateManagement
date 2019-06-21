@@ -26,7 +26,7 @@
         <td>
             <button class="btn btn-primary" id="tab1" onclick="printData()" style="border-radius:10px;min-width:170px;">Print</button>
         </td>
-        <a asp-action="AddOrEdit"><button class="btn btn-primary" style="float:right;"><i class="fa fa-plus" style="margin:5px;" aria-hidden="true"></i>Add Requirement</button></a>
+        <a asp-action="Create"><button class="btn btn-primary" style="float:right;"><i class="fa fa-plus" style="margin:5px;" aria-hidden="true"></i>Add Requirement</button></a>
 
     </tr>
 </table>
@@ -93,7 +93,7 @@
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
-                    <a asp-action="Index" asp-controller="SubmissionList" asp-route-id="@item.Departement" data-toggle="tooltip" title="Assign To Candidate"> <img src="~/icon/138658-200.png" style="width:20px;"></a>
+                    <a asp-action="Index" asp-controller="SubmissionList" asp-route-id="@item.Departement" data-toggle="tooltip" title="Assign To Candidate"> <img src="~/icon/138658-200.png" style="width:30px;"></a>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil" data-toggle="tooltip" title="Edit" aria-hidden="true"></i></a> |

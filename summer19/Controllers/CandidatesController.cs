@@ -70,8 +70,6 @@ namespace summer19.Controllers
         }
 
         // POST: Candidates/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Firstname,Middlename,Lastname,Jobtitle,Email,Cell,Home,Fax,Address1,Address2,City,Zip,Departement,Country,Hire,Comptetenices,Jobcategory,Source,Resumeupload,Resumes,Status,Feedback")] Candidate candidate)
