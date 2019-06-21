@@ -33,6 +33,7 @@ namespace summer19.Controllers
                 var data = db.Requirements.FromSql("select * from Requirements");
                 return View(data);
             }
+            //return View(await _context.Requirements.ToListAsync());
         }
 
         // GET: Requirements/Details/5
@@ -60,7 +61,8 @@ namespace summer19.Controllers
         }
 
         // POST: Requirements/Create
-
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,Departement,Position,NoPosition,Skills,Location,Status,Comments,Date")] Requirements requirement)
@@ -91,6 +93,8 @@ namespace summer19.Controllers
         }
 
         // POST: Requirements/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public  ActionResult Edit(int id,Requirements requirement)
@@ -155,6 +159,8 @@ namespace summer19.Controllers
         [HttpGet]
         public ActionResult Transfer(string dept)
         {
+
+            //return this.RedirectToAction("Index","SubmissionList");
             if (dept == null)
             {
                 return NotFound();

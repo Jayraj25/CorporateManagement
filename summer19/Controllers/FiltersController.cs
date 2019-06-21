@@ -59,6 +59,9 @@ namespace summer19.Controllers
                     var require = ViewData["selectreq"];
                     var position = ViewData["selectpos"];
                     var jobcat = ViewData["selectloc"];
+                    /*string require = filter.Req;
+                string position = filter.Pos;
+                string jobcat = filter.Loc;*/
 
                     if (require != V && position == V && jobcat == V)
                     {

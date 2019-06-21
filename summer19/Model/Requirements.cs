@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace summer19.Model
 {
@@ -14,8 +13,6 @@ namespace summer19.Model
         public string Location { get; set; }
         public string Status { get; set; }
         public string Comments { get; set; }
-
-        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
     }
 }

@@ -11,6 +11,8 @@
     }
 
 <style>
+
+
     /* The switch - the box around the slider */
     .switch {
         position: relative;
@@ -20,10 +22,10 @@
         float: right;
     }
 
-    /* Hide default HTML checkbox */
-    .switch input {
-        display: none;
-    }
+        /* Hide default HTML checkbox */
+        .switch input {
+            display: none;
+        }
 
     /* The slider */
     .slider {
@@ -38,17 +40,17 @@
         transition: .4s;
     }
 
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
 
     input.default:checked + .slider {
         background-color: #444;
@@ -56,6 +58,26 @@
 
     input.primary:checked + .slider {
         background-color: #2196F3;
+    }
+
+    input.success:checked + .slider {
+        background-color: #8bc34a;
+    }
+
+    input.info:checked + .slider {
+        background-color: #3de0f5;
+    }
+
+    input.warning:checked + .slider {
+        background-color: #FFC107;
+    }
+
+    input.danger:checked + .slider {
+        background-color: #f44336;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
     }
 
     input:checked + .slider:before {
@@ -69,11 +91,55 @@
         border-radius: 34px;
     }
 
-    .slider.round:before {
-        border-radius: 50%;
-    }
+        .slider.round:before {
+            border-radius: 50%;
+        }
 </style>
 
+<script>
+    var localStorageKey = "app_state";
+
+    // to preserve state, you first need to keep track of it
+    var default_state = {
+        slide: false,
+    }
+
+    var saved_state = localStorage.getItem(localStorageKey);
+
+    // ternary operator which means if `saved_state` evaluates to `true` we parse it and use that value for `state`; otherwise use `default_state`
+    var state = saved_state ? JSON.parse(saved_state) : default_state;
+
+    $(function () {
+        init();
+
+        $('.button').on('click', function () {
+            var circle = $(this).attr('data-circle');
+            toggleCircle(circle, !state[circle]);
+            //$(this).find('i').toggleClass('fa-minus fa-plus');
+        });
+    });
+
+
+    function init() {
+        for (var key in state) {
+            var is_displayed = state[key];
+            console.log(is_displayed);
+            toggleCircle(key, is_displayed);
+        }
+    }
+
+    function toggleCircle(circle, is_displayed) {
+        if (is_displayed) {
+            $('.' + circle).show()
+            state[circle] = true;
+        } else {
+            $('.' + circle).hide()
+            state[circle] = false;
+        }
+
+        localStorage.setItem(localStorageKey, JSON.stringify(state));
+    }
+</script>
 
 <table>
     <tr>
@@ -153,7 +219,7 @@
                 <td>
                     <a href="~/Files/@item.Resumes" target="_blank" data-toggle="tooltip" title="Resume">
                         <img src="~/icon/pdf.png" style="width:50px;" /></a>
-                </td>
+</td>
                 <td>
                     <label class="switch ">
                         <input type="checkbox" class="primary" checked>
